@@ -12,7 +12,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_weight="1">
 
         <ImageView
             android:layout_width="match_parent"
@@ -32,7 +32,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="Welcome to CampusLife - Your Pocket Guide to University of Waikato"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="40sp" />
 
     </FrameLayout>
@@ -41,15 +41,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:background="#FFF7FF"
+        android:layout_weight="1"
+        android:background="@color/green"
         android:orientation="vertical">
-
-        <!-- Top spacing -->
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.15" />
 
         <!-- First row: Facilities and Events -->
         <LinearLayout
@@ -57,11 +51,6 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.18" />
 
             <!-- Facilities -->
             <LinearLayout
@@ -76,8 +65,8 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:src="@drawable/img_btn_facilities"
-                    android:scaleType="fitCenter"
-                    android:background="#B0B0B0"
+                    android:scaleType="centerInside"
+                    android:background="@drawable/button_selector"
                     android:contentDescription="Facilities" />
 
                 <TextView
@@ -85,15 +74,9 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Facilities"
-                    android:textColor="#000000" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
-
-            <!-- Space between buttons -->
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.20" />
 
             <!-- Events -->
             <LinearLayout
@@ -108,8 +91,8 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:src="@drawable/img_btn_events"
-                    android:scaleType="fitCenter"
-                    android:background="#B0B0B0"
+                    android:scaleType="centerInside"
+                    android:background="@drawable/button_selector"
                     android:contentDescription="Events" />
 
                 <TextView
@@ -117,22 +100,11 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Events"
-                    android:textColor="#000000" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.18" />
-
         </LinearLayout>
-
-        <!-- Spacing between rows -->
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.17" />
 
         <!-- Second row: Clubs and Support -->
         <LinearLayout
@@ -140,11 +112,6 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.18" />
 
             <!-- Clubs -->
             <LinearLayout
@@ -159,8 +126,8 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:src="@drawable/img_btn_clubs"
-                    android:scaleType="fitCenter"
-                    android:background="#B0B0B0"
+                    android:scaleType="centerInside"
+                    android:background="@drawable/button_selector"
                     android:contentDescription="Clubs" />
 
                 <TextView
@@ -168,15 +135,9 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Clubs"
-                    android:textColor="#000000" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
-
-            <!-- Space between buttons -->
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.20" />
 
             <!-- Support -->
             <LinearLayout
@@ -191,8 +152,8 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:src="@drawable/img_btn_support"
-                    android:scaleType="fitCenter"
-                    android:background="#B0B0B0"
+                    android:scaleType="centerInside"
+                    android:background="@drawable/button_selector"
                     android:contentDescription="Support" />
 
                 <TextView
@@ -200,22 +161,11 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Support"
-                    android:textColor="#000000" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.18" />
-
         </LinearLayout>
-
-        <!-- Bottom spacing -->
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.15" />
 
     </LinearLayout>
 
