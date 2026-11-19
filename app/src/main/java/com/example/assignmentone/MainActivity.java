@@ -1,51 +1,68 @@
+
 package com.example.assignmentone;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import android.view.View;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Unique key used to identify the selected topic
+    public static final String EXTRA_TOPIC_INDEX = "topic_index";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        ViewCompat.setOnApplyWindowInsetsListener(
+                findViewById(R.id.main), (v, insets) -> {
+                    Insets systemBars = insets.getInsets(
+                            WindowInsetsCompat.Type.systemBars());
+
+                    v.setPadding(
+                            systemBars.left,
+                            systemBars.top,
+                            systemBars.right,
+                            systemBars.bottom
+                    );
+
+                    return insets;
+                });
     }
 
-    // Facilities button click event
+    // Open Facilities details
     public void onFacilitiesClick(View view) {
-        Toast.makeText(this, "Facilities clicked",
-                Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra(EXTRA_TOPIC_INDEX, 0);
+        startActivity(intent);
     }
 
-    // Events button click event
+    // Open Events details
     public void onEventsClick(View view) {
-        Toast.makeText(this, "Events clicked",
-                Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra(EXTRA_TOPIC_INDEX, 1);
+        startActivity(intent);
     }
 
-    // Clubs button click event
+    // Open Clubs details
     public void onClubsClick(View view) {
-        Toast.makeText(this, "Clubs clicked",
-                Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra(EXTRA_TOPIC_INDEX, 2);
+        startActivity(intent);
     }
 
-    // Support button click event
+    // Open Support details
     public void onSupportClick(View view) {
-        Toast.makeText(this, "Support clicked",
-                Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra(EXTRA_TOPIC_INDEX, 3);
+        startActivity(intent);
     }
-
 }

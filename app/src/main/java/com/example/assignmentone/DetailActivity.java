@@ -1,6 +1,8 @@
+
 package com.example.assignmentone;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,10 +17,27 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_detail);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        ViewCompat.setOnApplyWindowInsetsListener(
+                findViewById(R.id.main), (v, insets) -> {
+                    Insets systemBars = insets.getInsets(
+                            WindowInsetsCompat.Type.systemBars());
+
+                    v.setPadding(
+                            systemBars.left,
+                            systemBars.top,
+                            systemBars.right,
+                            systemBars.bottom
+                    );
+
+                    return insets;
+                });
+
+        // Receive the selected topic index from MainActivity
+        int topicIndex = getIntent().getIntExtra(
+                MainActivity.EXTRA_TOPIC_INDEX, -1);
+
+        // Log the received index for testing
+        Log.d("CampusLife", "Selected topic index: " + topicIndex);
     }
 }
