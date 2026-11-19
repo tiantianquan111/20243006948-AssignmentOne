@@ -3,6 +3,8 @@ package com.example.assignmentone;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,11 +35,46 @@ public class DetailActivity extends AppCompatActivity {
                     return insets;
                 });
 
-        // Receive the selected topic index from MainActivity
+        // Receive the selected topic index
         int topicIndex = getIntent().getIntExtra(
                 MainActivity.EXTRA_TOPIC_INDEX, -1);
 
-        // Log the received index for testing
         Log.d("CampusLife", "Selected topic index: " + topicIndex);
+
+        // Retrieve arrays from arrays.xml
+        String[] images = getResources().getStringArray(
+                R.array.string_array_images);
+
+        String[] titles = getResources().getStringArray(
+                R.array.string_array_titles);
+
+        String[] contents = getResources().getStringArray(
+                R.array.string_array_content);
+
+        // Find views in activity_detail.xml
+        ImageView detailIcon = findViewById(R.id.detail_icon);
+        TextView detailTopic = findViewById(R.id.detail_topic);
+        TextView detailTitle = findViewById(R.id.detail_title);
+        TextView detailContent = findViewById(R.id.detail_content);
+
+        // Retrieve the corresponding topic data
+        String imageName = images[topicIndex].trim();
+        String title = titles[topicIndex].trim();
+        String content = contents[topicIndex].trim();
+
+        // Obtain the drawable resource ID
+        int imageId = getResources().getIdentifier(
+                imageName, "drawable", getPackageName());
+
+        // Generate the topic name from the image name
+        String topicName = imageName.replace("img_btn_", "");
+        topicName = Character.toUpperCase(topicName.charAt(0))
+                + topicName.substring(1);
+
+        // Update the DetailActivity UI
+        detailIcon.setImageResource(imageId);
+        detailTopic.setText(topicName);
+        detailTitle.setText(title);
+        detailContent.setText(content);
     }
 }
