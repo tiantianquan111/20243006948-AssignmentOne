@@ -12,6 +12,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * Displays details for the selected CampusLife service.
+ * Loads the corresponding image, title and content from XML arrays.
+ */
 public class DetailActivity extends AppCompatActivity {
 
     @Override
@@ -20,6 +24,7 @@ public class DetailActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_detail);
 
+        // Apply system bar padding to avoid overlapping screen content.
         ViewCompat.setOnApplyWindowInsetsListener(
                 findViewById(R.id.main), (v, insets) -> {
                     Insets systemBars = insets.getInsets(

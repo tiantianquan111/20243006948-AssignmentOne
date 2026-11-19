@@ -11,6 +11,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * Main activity of the CampusLife application.
+ * Displays four service buttons and opens the selected detail page.
+ */
 public class MainActivity extends AppCompatActivity {
 
     // Unique key used to identify the selected topic
@@ -22,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        // Handle system bar insets to keep the layout responsive.
         ViewCompat.setOnApplyWindowInsetsListener(
                 findViewById(R.id.main), (v, insets) -> {
                     Insets systemBars = insets.getInsets(
